@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_netflix/screen/home_sereen.dart';
+import 'package:flutter_netflix/screen/home_screen.dart';
 import 'package:flutter_netflix/screen/more_screen.dart';
 import 'package:flutter_netflix/widget/bottom_bar.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override
